@@ -10,12 +10,9 @@ public class SeparationEnteredDataAndSaving {
         for (String parameter : parameters) {
             String[] split = parameter.split("=");
             if (split.length == 2 && !split[0].equals("type")) {
-
-                if(Pattern.matches("\\d+", split[1])){
-                    String key = split[0];
-                    int value = Integer.parseInt(split[1]);
-                    storageData.setValue(key, value);
-                }
+                String key = split[0];
+                int value = Integer.parseInt(split[1]);
+                storageData.setValue(key, value);
             } else if (split.length == 2){
                 if (Pattern.matches(".*[\\+\\-\\*\\/\\=].*", split[1])){
                     String key = split[0];

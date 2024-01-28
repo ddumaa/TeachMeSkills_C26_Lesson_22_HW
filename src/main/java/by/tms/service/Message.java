@@ -7,6 +7,6 @@ public class Message {
     private String message;
 
     public void clearMessage(){
-        message = " ";
+        message = "";
     }
 }
