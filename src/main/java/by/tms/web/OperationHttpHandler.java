@@ -22,6 +22,7 @@ public class OperationHttpHandler implements HttpHandler {
         String query = exchange.getRequestURI().getQuery(); //localhost:8080/calculate?num1=2&type=+&num2=2
 		String[] parameters = query.split("&");
 
+
         separationEnteredDataAndSaving.separationEnteredDataAndSaving(parameters, storageData);
 
         String s = dataChecking.check(storageData, message);

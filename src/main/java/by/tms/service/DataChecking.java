@@ -13,9 +13,12 @@ public class DataChecking {
             message.setMessage("Incorrect data was entered instead of a number");
             messageYep = true;
         } else if (storageData.getOperations().isEmpty()){
-                message.setMessage("an incorrect mathematical sign was entered");
-                messageYep = true;
-        } else if(!storageData.getValues().isEmpty()&&!storageData.getOperations().isEmpty()){
+            message.setMessage("an incorrect mathematical sign was entered");
+            messageYep = true;
+        } else if (storageData.getValues().size() %2 !=0) {
+            message.setMessage("Incorrect data was entered instead of a number");
+            messageYep = true;
+        } else {
             int zero = storageData.getValues().get("num2");
             String op = storageData.getOperations().get("type");
             if (zero == 0 && op.equals("/")) {
